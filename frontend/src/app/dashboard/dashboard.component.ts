@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { StudentService } from '../services/student.service';
 import { CourseService } from '../services/course.service';
+import { VersionService } from '../services/version.service';
 import { Student } from '../models/student.model';
 import { Course } from '../models/course.model';
 
@@ -23,7 +24,8 @@ export class DashboardComponent implements OnInit {
   
   constructor(
     private studentService: StudentService,
-    private courseService: CourseService
+    private courseService: CourseService,
+    public versionService: VersionService
   ) {}
   
   ngOnInit(): void {

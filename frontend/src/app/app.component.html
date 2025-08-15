@@ -1,6 +1,19 @@
 <div class="app-container">
   <header class="app-header">
-    <h1>Student Management System</h1>
+    <div class="header-left">
+      <h1>Student Management System</h1>
+      <div class="system-info">
+        <div class="version-row">
+          <span class="version-badge">Frontend: v{{ versionService.getAppVersion() }}</span>
+          <span class="version-badge">Backend: v{{ versionService.getBackendVersion() }}</span>
+        </div>
+        <div class="system-details">
+          <span class="system-item">Java: {{ versionService.getBackendVersionInfo()?.javaVersion || 'N/A' }}</span>
+          <span class="system-item">Spring Boot: {{ versionService.getBackendVersionInfo()?.springBootVersion || 'N/A' }}</span>
+          <span class="system-item">Build: {{ versionService.getBackendVersionInfo()?.buildDate || 'N/A' }}</span>
+        </div>
+      </div>
+    </div>
     <nav class="nav-menu">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
       <a routerLink="/students" routerLinkActive="active">Students</a>
@@ -11,4 +24,15 @@
   <main class="app-main">
     <router-outlet></router-outlet>
   </main>
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-version">
+        <span>Frontend: v{{ versionService.getAppVersion() }}</span>
+        <span>Backend: v{{ versionService.getBackendVersion() }}</span>
+      </div>
+      <div class="footer-copyright">
+        © 2024 Student Management System
+      </div>
+    </div>
+  </footer>
 </div>

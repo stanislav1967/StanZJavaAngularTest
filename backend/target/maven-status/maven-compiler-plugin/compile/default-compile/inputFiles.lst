@@ -1,8 +1,11 @@
+C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\dto\VersionInfo.java
+C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\service\VersionService.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\dto\EnrollmentRequest.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\controller\EnrollmentController.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\exception\ValidationException.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\config\CorsConfig.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\exception\ResourceNotFoundException.java
+C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\controller\VersionController.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\controller\CourseController.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\service\CourseService.java
 C:\local_work\JavaAngularTest\backend\src\main\java\com\student\management\dto\StudentDto.java

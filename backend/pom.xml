@@ -8,10 +8,10 @@
         <version>3.2.0</version>
         <relativePath/>
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>com.student.management</groupId>
+    <artifactId>student-management-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <name>student-management-system</name>
     <description>Student Management System with Spring Boot</description>
     <properties>
         <java.version>17</java.version>
