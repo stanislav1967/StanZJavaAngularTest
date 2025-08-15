@@ -1,0 +1,38 @@
+<div class="student-list-container">
+  <div class="header">
+    <h2>Student Management</h2>
+    <a routerLink="/students/new" class="add-btn">➕ Add New Student</a>
+  </div>
+  
+  <div class="search-section">
+    <input 
+      type="text" 
+      placeholder="Search students..." 
+      class="search-input"
+      (input)="onSearch($event)">
+  </div>
+  
+  <div class="students-grid">
+    <div *ngFor="let student of students" class="student-card">
+      <div class="student-avatar">
+        {{ student.firstName.charAt(0) }}{{ student.lastName.charAt(0) }}
+      </div>
+      <div class="student-info">
+        <h3>{{ student.firstName }} {{ student.lastName }}</h3>
+        <p class="email">{{ student.email }}</p>
+        <p class="phone" *ngIf="student.phoneNumber">{{ student.phoneNumber }}</p>
+        <p class="courses" *ngIf="student.courseIds && student.courseIds.length > 0">
+          Enrolled in {{ student.courseIds.length }} course(s)
+        </p>
+      </div>
+      <div class="actions">
+        <a [routerLink]="['/students/edit', student.id]" class="edit-btn">✏️ Edit</a>
+        <button (click)="deleteStudent(student.id!)" class="delete-btn">🗑️ Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="students.length === 0" class="no-students">
+    <p>No students found. Add your first student!</p>
+  </div>
+</div>

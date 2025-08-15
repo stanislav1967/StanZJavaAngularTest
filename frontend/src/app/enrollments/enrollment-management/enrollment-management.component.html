@@ -1,0 +1,68 @@
+<div class="enrollment-container">
+  <div class="header">
+    <h2>Enrollment Management</h2>
+    <p>Manage student course enrollments</p>
+  </div>
+
+  <div class="enrollment-form">
+    <h3>Enroll Student in Course</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="studentSelect">Select Student:</label>
+        <select id="studentSelect" [(ngModel)]="selectedStudentId" class="form-control">
+          <option value="">Choose a student...</option>
+          <option *ngFor="let student of students" [value]="student.id">
+            {{ student.firstName }} {{ student.lastName }} ({{ student.email }})
+          </option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="courseSelect">Select Course:</label>
+        <select id="courseSelect" [(ngModel)]="selectedCourseId" class="form-control">
+          <option value="">Choose a course...</option>
+          <option *ngFor="let course of courses" [value]="course.id">
+            {{ course.courseCode }} - {{ course.courseName }}
+          </option>
+        </select>
+      </div>
+      
+      <button 
+        (click)="enrollStudent()" 
+        [disabled]="!selectedStudentId || !selectedCourseId"
+        class="enroll-btn">
+        📚 Enroll Student
+      </button>
+    </div>
+  </div>
+
+  <div class="enrollments-section">
+    <h3>Current Enrollments</h3>
+    <div class="enrollments-grid">
+      <div *ngFor="let enrollment of enrollments" class="enrollment-card">
+        <div class="enrollment-info">
+          <div class="student-info">
+            <strong>{{ enrollment.studentName }}</strong>
+            <span class="badge student-badge">👤 Student</span>
+          </div>
+          <div class="course-info">
+            <strong>{{ enrollment.courseName }}</strong>
+            <span class="badge course-badge">📖 Course</span>
+          </div>
+          <div class="enrollment-date">
+            Enrolled: {{ enrollment.enrolledAt | date:'short' }}
+          </div>
+        </div>
+        <button 
+          (click)="unenrollStudent(enrollment.studentId, enrollment.courseId)"
+          class="unenroll-btn">
+          🗑️ Unenroll
+        </button>
+      </div>
+    </div>
+    
+    <div *ngIf="enrollments.length === 0" class="no-enrollments">
+      <p>No enrollments found. Enroll a student in a course to get started!</p>
+    </div>
+  </div>
+</div>

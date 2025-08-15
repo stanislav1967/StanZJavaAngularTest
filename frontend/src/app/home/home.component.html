@@ -1,0 +1,39 @@
+<div class="home-container">
+  <div class="card">
+    <h2>Backend API Test</h2>
+    <p>Click the buttons below to test the Spring Boot backend APIs:</p>
+    
+    <div class="button-group">
+      <button 
+        (click)="testHelloApi()" 
+        [disabled]="loading"
+        class="btn btn-primary">
+        {{ loading ? 'Loading...' : 'Test Hello API' }}
+      </button>
+      
+      <button 
+        (click)="testHealthApi()" 
+        [disabled]="loading"
+        class="btn btn-secondary">
+        {{ loading ? 'Loading...' : 'Test Health API' }}
+      </button>
+    </div>
+    
+    <div *ngIf="response" class="response-section">
+      <h3>API Response:</h3>
+      <pre class="response-json">{{ response | json }}</pre>
+    </div>
+    
+    <div *ngIf="error" class="error-section">
+      <h3>Error:</h3>
+      <p class="error-message">{{ error }}</p>
+    </div>
+  </div>
+  
+  <div class="info-card">
+    <h3>Backend Status</h3>
+    <p><strong>URL:</strong> http://localhost:8080</p>
+    <p><strong>Frontend:</strong> http://localhost:4200</p>
+    <p><strong>CORS:</strong> Configured to allow frontend requests</p>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="student-form-container">
+  <div class="header">
+    <h2>{{ isEditMode ? 'Edit Student' : 'Add New Student' }}</h2>
+    <a routerLink="/students" class="back-btn">← Back to Students</a>
+  </div>
+  
+  <form (ngSubmit)="onSubmit()" class="student-form">
+    <div class="form-group">
+      <label for="firstName">First Name *</label>
+      <input 
+        type="text" 
+        id="firstName" 
+        name="firstName"
+        [(ngModel)]="student.firstName"
+        required
+        minlength="2"
+        maxlength="50"
+        class="form-input">
+    </div>
+    
+    <div class="form-group">
+      <label for="lastName">Last Name *</label>
+      <input 
+        type="text" 
+        id="lastName" 
+        name="lastName"
+        [(ngModel)]="student.lastName"
+        required
+        minlength="2"
+        maxlength="50"
+        class="form-input">
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email"
+        [(ngModel)]="student.email"
+        required
+        class="form-input">
+    </div>
+    
+    <div class="form-group">
+      <label for="dateOfBirth">Date of Birth *</label>
+      <input 
+        type="date" 
+        id="dateOfBirth" 
+        name="dateOfBirth"
+        [(ngModel)]="student.dateOfBirth"
+        required
+        class="form-input">
+    </div>
+    
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input 
+        type="tel" 
+        id="phoneNumber" 
+        name="phoneNumber"
+        [(ngModel)]="student.phoneNumber"
+        class="form-input">
+    </div>
+    
+    <div class="form-actions">
+      <button type="button" routerLink="/students" class="cancel-btn">Cancel</button>
+      <button type="submit" class="submit-btn" [disabled]="!isFormValid()">
+        {{ isEditMode ? 'Update Student' : 'Add Student' }}
+      </button>
+    </div>
+  </form>
+</div>
