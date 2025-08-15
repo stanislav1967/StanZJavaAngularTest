@@ -1,5 +1,4 @@
 com\example\demo\service\CourseService.class
-com\example\demo\DemoApplication.class
 com\example\demo\service\StudentService.class
 com\example\demo\exception\GlobalExceptionHandler$ErrorResponse.class
 com\example\demo\exception\ValidationException.class
